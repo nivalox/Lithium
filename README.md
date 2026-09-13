@@ -1,5 +1,5 @@
-# Utopia
-Utopia Unblocker unblocks hundreds of millions of websites and bypasses web restrictions with ease.
+# Lithium
+Lithium Unblocker unblocks hundreds of millions of websites and bypasses web restrictions with ease.
 The most revolutionary proxy service out there, adding unprecendented technology and algorithms to circumvent blocks.
 
 Trusted by over **22 million users** and counting.
