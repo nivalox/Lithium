@@ -17,7 +17,7 @@
     "acorn-hammerhead": "^0.6.3",
     "css-tree": "^3.2.1",
     "express": "^5.2.1",
-    "node-static": "^8.0.1",
+    "node-static": "^0.7.11",
     "parse5": "^6.0.1",
     "webpack": "^5.110.3"
   }
