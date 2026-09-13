@@ -1,4 +1,9 @@
-# Lithium
+<p align="center">
+  <img src="main/img/logo.png" alt="Fleasio Logo" width="300">
+</p>
+
+---
+
 Lithium Unblocker unblocks hundreds of millions of websites and bypasses web restrictions with ease.
 The most revolutionary proxy service out there, adding unprecendented technology and algorithms to circumvent blocks.
 
@@ -31,7 +36,6 @@ These features can be enabled/disabled in the Settings page in Utopia:
 ## 📦 Deployment
 Easily deploy your own instance of Utopia using one of the platforms below:
 
-[![Run on Replit](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/replit.svg)](https://replit.com/github/UtopiaUnblocker/Utopia)
 <br>
 [![Deploy to Heroku](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/UtopiaUnblocker/Utopia)
 <br>
@@ -48,8 +52,8 @@ Easily deploy your own instance of Utopia using one of the platforms below:
 ### Manual Setup
 ```bash
 # Clone the repository
-git clone https://github.com/UtopiaUnblocker/Utopia.git
-cd Utopia
+git clone https://github.com/nivalox/Lithium.git
+cd Lithium
 
 # Install dependencies
 npm install
@@ -67,5 +71,5 @@ Need help deploying or want to suggest features?
 
 ---
 <p align="center">
-  <strong>⭐ Star this repository if Utopia helps you!</strong>
+  <strong>⭐ Star this repository if Lithium helps you!</strong>
 </p>
