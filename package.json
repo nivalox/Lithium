@@ -1,0 +1,19 @@
+{
+  "name": "lithium",
+  "version": "1.0.0",
+  "description": "Bare HTTP/WebSocket proxy server with a static front-end host",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "AGPL-3.0",
+  "author": "",
+  "dependencies": {
+    "@tomphttp/bare-server-node": "^2.0.6",
+    "node-static": "^0.7.11"
+  }
+}

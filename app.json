@@ -1,0 +1,12 @@
+{
+  "name": "Lithium",
+  "description": "Bare HTTP/WebSocket proxy server with a static front-end host",
+  "repository": "https://github.com/<your-username>/Lithium",
+  "keywords": ["proxy", "node", "bare-server"],
+  "env": {
+    "PORT": {
+      "description": "Port the server listens on",
+      "value": "8080"
+    }
+  }
+}
