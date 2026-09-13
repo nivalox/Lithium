@@ -5,7 +5,7 @@ import nodeStatic from 'node-static';
 const port = process.env.PORT || 8080;
 
 const bare = createBareServer('/bare/');
-const serve = new nodeStatic.Server('main/');
+const serve = new nodeStatic.Server('main/main.html');
 
 const server = http.createServer();
 
