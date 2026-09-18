@@ -385,7 +385,7 @@ br {
 }
 
 .setting select {
-  margin-top: 60px;
+  margin-top: 120px;
   width: calc(100% - 60px);
   padding: 8px 14px;
   font-size: 13px;
