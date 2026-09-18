@@ -384,6 +384,44 @@ br {
   filter: brightness(90%);
 }
 
+.setting select {
+  position: absolute;
+  top: calc(50% - 4px);
+  width: calc(100% - 60px);
+  padding: 6px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid rgb(40,70,80);
+  background-color: rgb(15, 27, 33);
+  color: rgb(200,200,200);
+}
+
+.setting .engineLinks {
+  position: absolute;
+  top: calc(50% + 30px);
+  font-size: 13px;
+}
+
+.setting .engineLinks span {
+  text-decoration: underline;
+  color: rgb(140, 140, 140);
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.setting .engineLinks span:hover {
+  filter: brightness(90%);
+}
+
+.setting #engineSaved {
+  color: rgb(140,163,176);
+  opacity: 0;
+  position: absolute;
+  bottom: 13px;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
 .setting img {
   user-select: none;
   vertical-align: middle;

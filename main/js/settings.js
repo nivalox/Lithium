@@ -51,7 +51,7 @@ openLinks.querySelector(".add").onclick = function(){
     this.quickLinkUrl = prompt("Enter the url you want to add to your quick links (ex. google.com). Click CANCEL to go back:");
     if(this.quickLinkUrl == null){return}
     this.quickLinkUrl = this.quickLinkUrl.trim();
-    if (!isUrl(this.quickLinkUrl)) this.quickLinkUrl = 'https://www.google.com/search?q=' + this.quickLinkUrl;
+    if (!isUrl(this.quickLinkUrl)) this.quickLinkUrl = buildSearchUrl(this.quickLinkUrl);
     if (!(this.quickLinkUrl.startsWith('https://') || this.quickLinkUrl.startsWith('http://'))) this.quickLinkUrl = 'http://' + this.quickLinkUrl;
     this.quickLinkName = prompt("Enter the name you want for that URL (ex. Google). The name will be shown in 'Quick Links.' Click CANCEL to exit:");
     if(this.quickLinkName == null){return}
@@ -110,4 +110,83 @@ for(var i=0;i<allSettings.length;i++){
             }
         }
     }
+}
+
+/* SEARCH ENGINE */
+
+var engineSelect = document.getElementById("engine_select");
+
+function populateEngineSelect(){
+    var all = getAllEngines();
+    var selected = localStorage.getItem("searchEngine") || builtInEngines[0][0];
+    engineSelect.innerHTML = "";
+    for(var i=0;i<all.length;i++){
+        var opt = document.createElement("option");
+        opt.value = all[i][0];
+        opt.innerText = all[i][0];
+        if(all[i][0] === selected) opt.selected = true;
+        engineSelect.appendChild(opt);
+    }
+}
+
+function showEngineSaved(){
+    var saved = document.getElementById("engineSaved");
+    saved.classList.remove("appear");
+    void saved.offsetWidth;
+    saved.classList.add("appear");
+}
+
+if(engineSelect){
+    populateEngineSelect();
+
+    engineSelect.onchange = function(){
+        localStorage.setItem("searchEngine", this.value);
+        showEngineSaved();
+    };
+
+    document.querySelector(".addEngine").onclick = function(){
+        var name = prompt("Enter a name for this search engine (ex. Presearch):");
+        if(name == null || name.trim() == "") return;
+        name = name.trim();
+        var url = prompt("Enter the search URL, with %s where the query should go.\n(ex. https://www.presearch.com/search?q=%s):");
+        if(url == null) return;
+        url = url.trim();
+        if(url.indexOf("%s") === -1){
+            alert("That URL needs a %s in it to mark where the search query goes.");
+            return;
+        }
+        var current = getCustomEngines();
+        current.push([name, url]);
+        localStorage.setItem("customEngines", JSON.stringify(current));
+        localStorage.setItem("searchEngine", name);
+        populateEngineSelect();
+        showEngineSaved();
+        alert('Added "' + name + '" as a search engine.');
+    };
+
+    document.querySelector(".rmEngine").onclick = function(){
+        var current = getCustomEngines();
+        if(current.length === 0){
+            alert("You haven't added any custom search engines.");
+            return;
+        }
+        var listTxt = "Type the NUMBER of the custom engine you want to remove:\n";
+        for(var i=0;i<current.length;i++){
+            listTxt += "\n" + (i+1) + ": " + current[i][0] + " - " + current[i][1];
+        }
+        var num = prompt(listTxt);
+        if(num == null) return;
+        if(!isNumeric(num) || num < 1 || num > current.length){
+            alert("Invalid number.");
+            return;
+        }
+        var removed = current.splice(num-1, 1)[0];
+        localStorage.setItem("customEngines", JSON.stringify(current));
+        if(localStorage.getItem("searchEngine") === removed[0]){
+            localStorage.setItem("searchEngine", builtInEngines[0][0]);
+        }
+        populateEngineSelect();
+        showEngineSaved();
+        alert('Removed "' + removed[0] + '".');
+    };
 }

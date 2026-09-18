@@ -18,7 +18,7 @@ function encodeUrl(str){
   return encodeURIComponent(str.toString().split('').map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char).join(''));
 }
 
-window.navigator.serviceWorker.register('./sw.js', {
+window.navigator.serviceWorker.register('/sw.js', {
     scope: /*__uv$config.prefix*/'/service/'
 }).then(() => {
     console.log("Service worker (for Quick Link) registered.");

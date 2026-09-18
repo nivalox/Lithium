@@ -65,6 +65,13 @@
         <span class="title" style="color:rgb(65,95,105)">Settings</span><br>
         <div class="settings">
           <div class="setting">
+            <p id="name">Search Engine</p>
+            <p>Choose what's used to search when you type something that isn't a URL.</p>
+            <select id="engine_select"></select>
+            <p class="engineLinks"><span class="addEngine">Add Custom Engine</span>&nbsp;&nbsp;&nbsp;<span class="rmEngine">Remove Custom Engine</span></p>
+            <p id="engineSaved">Saved!</p>
+          </div>
+          <div class="setting">
             <p id="name">Quick Links</p>
             <p>Turn this on to add links that can be accessed quickly via "Quick Links" in the navbar.</p>
             <p class="quickies" style="margin-top:60px;display:none;"><span id="detailBtn" class="add">Add Quick Links</span>&nbsp;&nbsp;&nbsp;<span id="detailBtn" class="rm">Remove Quick Links</span></p>
@@ -75,6 +82,7 @@
     </div>
   </div>
   
+  <script src="js/engines.js"></script>
   <script src="js/settings.js"></script>
 </body>
 </html>

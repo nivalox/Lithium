@@ -4,7 +4,14 @@ import nodeStatic from 'node-static';
 
 const port = process.env.PORT || 8080;
 
-const bare = createBareServer('/bare/');
+const bare = createBareServer('/bare/', {
+  logErrors: true,
+  connectionLimiter: {
+    maxConnectionsPerIP: 1000,
+    windowDuration: 60,
+    blockDuration: 5,
+  },
+});
 const serve = new nodeStatic.Server('main/');
 
 const server = http.createServer();
@@ -28,6 +35,16 @@ server.on('upgrade', (req, socket, head) => {
   } else {
     socket.end();
   }
+});
+
+// Log crashes instead of letting them silently kill the server (which is what
+// turns "the second request fails" into "every request fails from now on").
+process.on('uncaughtException', (err) => {
+  console.error('[uncaughtException]', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('[unhandledRejection]', reason);
 });
 
 server.listen(port, () => {

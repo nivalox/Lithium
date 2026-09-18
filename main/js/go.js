@@ -63,7 +63,7 @@ function quickGo(url, prx){
 
 function defaultUrl(url){
   if( !url.includes('.') && !url.startsWith('https://') && !url.startsWith('http://') ){
-    this.url = "https://www.google.com/search?q=" + url;
+    this.url = buildSearchUrl(url);
   }
   else if (url.startsWith('https://')) {
     this.url = url;
@@ -93,11 +93,11 @@ function uv(url) { // Open Ultraviolet
   window.setTimeout(function(){
     loading.querySelectorAll("span")[1].innerHTML = "there might be an error; join our <span style='text-decoration:underline;cursor:pointer;color:rgb(200,200,255);' onclick=\"window.open('https://discord.gg/hFZC5cgsmq', '_blank');\">discord</span> for support";
   }, 15000);
-  window.navigator.serviceWorker.register('./sw.js', {
+  window.navigator.serviceWorker.register('/sw.js', {
     scope: __uv$config.prefix
   }).then(() => {
     this.url = url.trim();
-    if (!isUrl(this.url)) this.url = 'https://www.google.com/search?q=' + this.url;
+    if (!isUrl(this.url)) this.url = buildSearchUrl(this.url);
     else if (!(this.url.startsWith('https://') || this.url.startsWith('http://'))) this.url = 'http://' + this.url;
     if(url != ""){
       window.location.href = __uv$config.prefix + encodeXor(this.url);
