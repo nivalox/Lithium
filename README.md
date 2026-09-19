@@ -53,7 +53,7 @@ npm start
 ---
 ## 💬 Community & Support
 Need help deploying or want to suggest features?
-- Join the official Discord: **Not Available Right Now**
+- Join the official Discord: https://discord.gg/KE6N35ySmK
 
 ---
 <p align="center">
