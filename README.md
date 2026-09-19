@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="main/img/LithiumLogo.png" alt="Fleasio Logo" width="300">
+  <img src="main/img/LithiumLogo2.png" alt="Fleasio Logo" width="200">
 </p>
 
 ---
