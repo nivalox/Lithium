@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: lithium
-    env: docker
-    plan: free
-    envVars:
-      - key: PORT
-        value: 8080
