@@ -1,7 +1,7 @@
 {
   "name": "lithium",
   "version": "1.0.0",
-  "description": "Bare HTTP/WebSocket proxy server with a static front-end host",
+  "description": "Web proxy front-end built on Lithium.js (Ultraviolet + Scramjet)",
   "type": "module",
   "main": "index.js",
   "engines": {
@@ -10,15 +10,9 @@
   "scripts": {
     "start": "node index.js"
   },
-  "license": "MIT",
-  "author": "",
+  "license": "AGPL-3.0",
+  "author": "nivalos",
   "dependencies": {
-    "@tomphttp/bare-server-node": "^2.0.6",
-    "acorn-hammerhead": "^0.6.3",
-    "css-tree": "^3.2.1",
-    "express": "^5.2.1",
-    "node-static": "^0.7.11",
-    "parse5": "^8.0.1",
-    "webpack": "^5.111.1"
+    "lithium.js": "github:nivalox/Lithium.js"
   }
 }
