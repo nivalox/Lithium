@@ -11,6 +11,8 @@ Trusted by over **no users** and counting.
 
 ## Special Features
 These features can be enabled/disabled in the Settings page in Lithium:
+ * **🧑‍💻 Proxy Backend**
+   * Lithium is a one of a kind Utopia fork with the ability to switch from Ultraviolet, and Scramjet powered by Lithium.js, the main backend for Lithium
  * **🔒 Hidden Mode**
    * Lithium revolutionized the world by being the first ever website to have about:blank cloaking
    * **Hides Lithium completely from your history** and **prevents extensions** such as GoGuardian **from seeing your screen**
